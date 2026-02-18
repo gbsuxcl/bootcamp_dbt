@@ -1,0 +1,11 @@
+dbt_example:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: project-92f08a44-0953-4ce2-9f9
+      dataset: "{{env_var('DBT_DBNAME', 'dbt_dw')}}"
+      threads: 4
+      keyfile: /home/urcioli/.dbt/project-92f08a44-0953-4ce2-9f9-6c06c27285f6.json
+      
